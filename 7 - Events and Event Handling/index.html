@@ -1,0 +1,71 @@
+<!-- Manejo de eventos en JavaScript, incluyendo el registro de eventos y la propagación.
+
+
+Los gestores de eventos pueden estar atados a varios elementos en el DOM. Cuando un evento ocurre, un objeto de evento 
+es dinámicamente creado y pasado secuencialmente a las "escuchas" (listeners) autorizadas para la gestión del evento. La 
+interfaz Event del DOM es entonces accesible por la función de manejo, vía el objeto de evento puesto como el primer (y único) 
+argumento.
+-->
+
+<html>
+	<head>
+		<title>Ejemplo de parámetro de objeto de evento</title>
+
+		<script type="text/javascript">
+			function showCoords(event) {
+				alert(
+					'clientX value: ' +
+						event.clientX +
+						'\n' +
+						'clientY value: ' +
+						event.clientY +
+						'\n'
+				);
+			}
+		</script>
+	</head>
+
+	<body onmousedown="showCoords(event)">
+		<p>
+			Para ver las coordinadas del ratón haga clic en cualquier lugar de esta
+			página.
+		</p>
+	</body>
+</html>
+
+<!-- El parámetro predefinido del objeto event permite pasar tantos parámetros de gestión de evento como sea necesario. -->
+
+<html>
+	<head>
+		<title>Ejemplo de objeto con varios parámetros</title>
+
+		<script type="text/javascript">
+			var par2 = 'hello';
+			var par3 = 'world!';
+
+			function muestraCoords(evt, p2, p3) {
+				alert(
+					'clienteX value: ' +
+						evt.clientX +
+						'\n' +
+						'clientY value: ' +
+						evt.clientY +
+						'\n' +
+						'p2: ' +
+						p2 +
+						'\n' +
+						'p3: ' +
+						p3 +
+						'\n'
+				);
+			}
+		</script>
+	</head>
+
+	<body onmousedown="muestraCoords(event, par2, par3)">
+		<p>
+			Para ver las coordinadas del ratón haga clic en cualquier lugar de esta
+			página.
+		</p>
+	</body>
+</html>

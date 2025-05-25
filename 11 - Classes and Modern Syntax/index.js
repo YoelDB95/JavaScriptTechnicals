@@ -22,7 +22,7 @@ console.log(circle.getPerimeter()); // 12.566370614359172
 
 /*
 constructor es una palabra clave que se usa en las clases para construir el objeto, se usa para inicializar los atributos o
-crear el objeto vacio para que este en memoria y poder usarlo. 
+crear el objeto vacio para que esté en memoria y poder usarlo. 
 
 Cuando hay comportamiento semejante y la relación entre ambas es "es un" entre dos clases se puede utilizar la herencia. 
 Por ejemplo, un circulo y un semi circulo saben calcular su perimetro y tienen al radio como propiedad y se puede 
@@ -44,7 +44,7 @@ Super se usa para acceder a la clase padre, tanto para ejecutar los métodos com
 
 class SemiCircle1 extends Circle {
     getPerimeter() {
-        return super.getPerimeter / 2
+        return super.getPerimeter() / 2
     }
 }
 
@@ -60,6 +60,10 @@ class Figure {
 
     constructor(name) {
         this.name = name
+    }
+
+    getName() {
+        return this.name
     }
 }
 
@@ -88,9 +92,11 @@ class SquareF extends Figure{
     }
 }
 
-const c = new Circle(4)
+const c = new CircleF(4)
+const s = new SquareF(3)
 
-console.log(c.getPerimeter()); // 25.132741228718345
+console.log(c.getName(), c.getPerimeter()); // Circle 25.132741228718345
+console.log(s.getName(), s.getPerimeter()); // Square 12
 
 
 /*
